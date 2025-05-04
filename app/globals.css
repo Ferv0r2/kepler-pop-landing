@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 70% 5%;
+    --foreground: 0 0% 98%;
+    --card: 240 70% 7%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 70% 7%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 160 64% 52%; /* 더 부드러운 틸 그린으로 변경 */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 35 92% 50%; /* 더 부드러운 주황색으로 변경 */
+    --secondary-foreground: 240 70% 5%;
+    --accent: 263 83% 66%; /* 더 부드러운 보라색으로 변경 */
+    --accent-foreground: 210 40% 98%;
+    --muted: 240 70% 12%;
+    --muted-foreground: 240 5% 75%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 240 70% 12%;
+    --input: 240 70% 12%;
+    --ring: 160 64% 52%; /* 링 색상도 맞춰서 변경 */
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image: radial-gradient(circle at 25px 25px, rgba(254, 240, 138, 0.15) 2px, transparent 0),
+      radial-gradient(circle at 75px 75px, rgba(254, 240, 138, 0.1) 2px, transparent 0);
+    background-size: 100px 100px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-game tracking-wider;
+  }
+
+  .font-game {
+    font-family: var(--font-press-start);
+  }
+
+  .game-button {
+    @apply relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-bold rounded-full group;
+  }
+
+  .game-button-primary {
+    @apply bg-primary text-white shadow-[0_0_15px_rgba(34,197,94,0.5)];
+  }
+
+  .game-button-primary::before {
+    @apply content-[''] absolute w-full h-full bg-gradient-to-br from-kawaii-sprout via-kawaii-orbit to-kawaii-planet -translate-x-full transition-transform duration-300 ease-out rounded-full;
+  }
+
+  .game-button-primary:hover::before {
+    @apply translate-x-0;
+  }
+
+  .game-button-primary span {
+    @apply relative z-10 transition-colors duration-300;
+  }
+
+  .game-button-primary:hover span {
+    @apply text-white;
+  }
+
+  .kawaii-corners {
+    border-radius: 24px;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 10px hsl(var(--primary)), 0 0 20px hsl(var(--primary)), 0 0 30px hsl(var(--primary));
+  }
+
+  .glow-text-yellow {
+    text-shadow: 0 0 10px #fbbf24, 0 0 20px #fbbf24, 0 0 30px #fbbf24;
+  }
+
+  .glow-text-purple {
+    text-shadow: 0 0 10px #a855f7, 0 0 20px #a855f7, 0 0 30px #a855f7;
+  }
+
+  .space-stars {
+    background-image: radial-gradient(2px 2px at 20px 30px, #fef08a, rgba(0, 0, 0, 0)),
+      radial-gradient(2px 2px at 40px 70px, #fef08a, rgba(0, 0, 0, 0)),
+      radial-gradient(2px 2px at 50px 160px, #fef08a, rgba(0, 0, 0, 0)),
+      radial-gradient(2px 2px at 90px 40px, #fef08a, rgba(0, 0, 0, 0)),
+      radial-gradient(2px 2px at 130px 80px, #fef08a, rgba(0, 0, 0, 0)),
+      radial-gradient(2px 2px at 160px 120px, #fef08a, rgba(0, 0, 0, 0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+  }
+
+  .orbit-ring {
+    position: absolute;
+    width: 140%;
+    height: 140%;
+    border: 4px solid;
+    border-color: #fbbf24;
+    border-radius: 9999px;
+    opacity: 0.8;
+    transform: rotate(-25deg);
+    box-shadow: 0 0 15px #f59e0b;
+  }
+
+  .orbit-ring::before {
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background-color: #fbbf24;
+    border-radius: 9999px;
+    top: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px #f59e0b;
+  }
+
+  .orbit-ring::after {
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background-color: #fbbf24;
+    border-radius: 9999px;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px #f59e0b;
+  }
+}
+
+/* Star twinkle animation */
+.star {
+  @apply absolute bg-kawaii-star rounded-full;
+  box-shadow: 0 0 10px rgba(254, 240, 138, 0.8);
+}
+
+.star-sm {
+  @apply w-1 h-1;
+}
+
+.star-md {
+  @apply w-2 h-2;
+}
+
+.star-lg {
+  @apply w-3 h-3;
+}
+
+/* Sparkle animation */
+.sparkle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  color: #fef08a;
+  animation: sparkle-animation 2s ease-in-out infinite;
+}
+
+@keyframes sparkle-animation {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+/* Four-point star */
+.four-point-star {
+  position: relative;
+  display: inline-block;
+  color: #fef08a;
+  font-size: 24px;
+}
+
+.four-point-star::after {
+  content: "✦";
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}
+
+/* Gradient text for logo */
+.gradient-text-kepler {
+  background: linear-gradient(to bottom, #fef08a 0%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+.gradient-text-pop {
+  background: linear-gradient(to bottom, #ec4899 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5));
+}
