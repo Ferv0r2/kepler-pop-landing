@@ -62,7 +62,7 @@ export default function CharacterGallery() {
             <PlantCharacter
               type={activeCharacter}
               size="xl"
-              withOrbit={activeCharacter === "sprout" || activeCharacter === "crystal"}
+              withOrbit={true}
             />
           </div>
 

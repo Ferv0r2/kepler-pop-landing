@@ -254,7 +254,7 @@ export default function LandingPage() {
                   </div>
 
                   <div className="mt-8 flex items-center gap-4">
-                    <div className="flex -space-x-2">
+                    <div className="flex">
                       {[
                         { type: "sprout" as PlantType },
                         { type: "tulip" as PlantType },
@@ -264,37 +264,18 @@ export default function LandingPage() {
                       ].map((char, i) => (
                         <div
                           key={i}
-                          className="w-10 h-10 rounded-full border-2 border-background overflow-hidden bg-muted/30"
+                          className="w-16 h-16 rounded-full border-2 border-background overflow-hidden bg-muted/30"
                         >
                           <div className="scale-75 transform -translate-y-1">
-                            <PlantCharacter type={char.type} size="sm" withPot={false} />
+                            <PlantCharacter type={char.type} size="md" withPot={false} animated={false}/>
                           </div>
                         </div>
                       ))}
                     </div>
-                    <div className="text-sm font-medium">
-                      <span className="text-kawaii-sprout">1,234+</span> players online now
-                    </div>
                   </div>
-
-                  <div className="mt-6 flex items-center gap-2">
-                    <div className="flex">
-                      {[1, 2, 3, 4, 5].map((i) => (
-                        <svg
-                          key={i}
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          height="20"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="text-kawaii-orbit"
-                        >
-                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                        </svg>
-                      ))}
+                    <div className="text-sm font-game mt-2">
+                      Take on the challenge with adorable plant friends!
                     </div>
-                    <span className="text-sm font-medium">4.8/5 평균 평점</span>
-                  </div>
                 </div>
               </div>
             </div>
@@ -303,9 +284,6 @@ export default function LandingPage() {
 
             <div className="absolute top-20 right-10 opacity-80">
               <PlantCharacter type="crystal" size="md" className="animate-float" />
-            </div>
-            <div className="absolute bottom-40 left-20 opacity-60">
-              <PlantCharacter type="cactus" size="sm" className="animate-float-slow" />
             </div>
           </section>
 
@@ -504,7 +482,7 @@ export default function LandingPage() {
                 <span className="text-xl font-game text-kawaii-sprout">Kepler-pop</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} Kepler-pop. All rights reserved.
+                © 2025 Ferv0r2Lab. All rights reserved.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 md:gap-8">

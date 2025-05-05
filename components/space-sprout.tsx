@@ -24,7 +24,7 @@ export default function SpaceSprout({
   return (
     <div className={cn("flex flex-col items-center justify-center", className)}>
       <div className={cn("space-sprout", sizeClasses[size], animated && "animate-bounce-slight")}>
-        {withOrbit && <div className="orbit-ring animate-orbit-reverse"></div>}
+      {withOrbit && <div className="orbit-ring animate-orbit-reverse"/>}
         <div className="space-sprout-body">
           <div className="space-sprout-eye space-sprout-eye-left"></div>
           <div className="space-sprout-eye space-sprout-eye-right"></div>

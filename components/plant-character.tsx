@@ -32,16 +32,16 @@ export default function PlantCharacter({
   const getCharacterImage = () => {
     switch (type) {
       case "cactus":
-        return "/images/cactus.png"
+        return "/images/plants/cactus.png"
       case "sunflower":
-        return "/images/sunflower.png"
+        return "/images/plants/sunflower.png"
       case "tulip":
-        return "/images/tulip.png"
+        return "/images/plants/tulip.png"
       case "crystal":
-        return "/images/crystal-cactus.png"
+        return "/images/plants/crystal-cactus.png"
       case "sprout":
       default:
-        return "/images/sprout.png"
+        return "/images/plants/sprout.png"
     }
   }
 
@@ -64,13 +64,13 @@ export default function PlantCharacter({
   return (
     <div className={cn("relative flex flex-col items-center justify-center", className)}>
       {withOrbit && (
-        <div
-          className={cn(
-            "orbit-ring",
-            animated && "animate-orbit-reverse",
-            type === "sunflower" ? "border-yellow-400" : "border-[#f59e0b]",
-          )}
-        ></div>
+      <div
+        className={cn(
+          "orbit-ring",
+          animated && "animate-orbit-reverse",
+          type === "sunflower" ? "border-yellow-400" : "border-[#f59e0b]",
+        )}
+      />
       )}
       <div className={cn("relative", sizeClasses[size], animated && "animate-bounce-slight")}>
         {/* Character glow effect */}
@@ -80,7 +80,7 @@ export default function PlantCharacter({
             getGlowColor(),
             "opacity-0 group-hover:opacity-100 transition-opacity duration-300",
           )}
-        ></div>
+        />
 
         {/* Character image */}
         <Image

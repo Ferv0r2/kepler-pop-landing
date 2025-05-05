@@ -65,18 +65,6 @@ export default function DownloadSection() {
                 App Store
               </GameButton>
             </div>
-
-            <div className="mt-8 flex items-center justify-center gap-4">
-              <Sparkle className="text-kawaii-orbit" size="lg" />
-              <div className="text-sm font-medium">
-                <span className="text-kawaii-sprout font-game">4.8/5</span> 평균 평점
-              </div>
-              <Sparkle className="text-kawaii-orbit" size="lg" delay={0.5} />
-            </div>
-
-            <div className="absolute top-2 right-2 bg-kawaii-orbit text-background text-xs px-2 py-1 rounded-full font-game">
-              NEW!
-            </div>
           </div>
         </div>
 
@@ -161,10 +149,6 @@ export default function DownloadSection() {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="absolute bottom-10 right-10 opacity-30">
-        <PlantCharacter type="sprout" size="sm" />
       </div>
     </section>
   )
