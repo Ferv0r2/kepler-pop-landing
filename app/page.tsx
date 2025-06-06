@@ -16,7 +16,7 @@ import PlantCharacter from "@/components/plant-character"
 import CharacterGallery from "@/components/character-gallery"
 import Sparkle from "@/components/sparkle"
 
-type PlantType = "sprout" | "tulip" | "sunflower" | "crystal" | "cactus"
+type PlantType = "sprout" | "tulip" | "sunflower" | "crystal" | "mushroom"
 
 export default function LandingPage() {
   const audioRef = useRef<HTMLAudioElement>(null)
@@ -260,7 +260,7 @@ export default function LandingPage() {
                         { type: "tulip" as PlantType },
                         { type: "sunflower" as PlantType },
                         { type: "crystal" as PlantType },
-                        { type: "cactus" as PlantType },
+                        { type: "mushroom" as PlantType },
                       ].map((char, i) => (
                         <div
                           key={i}

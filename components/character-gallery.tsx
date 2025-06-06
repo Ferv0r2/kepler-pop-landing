@@ -12,21 +12,21 @@ export default function CharacterGallery() {
   const characters = [
     {
       type: "sprout" as PlantType,
-      name: "Space Sprout",
+      name: "Lumi",
       description: "The main character and your guide through the Kepler system",
       stats: { speed: 3, power: 2, magic: 4 },
       special: "Grows faster in cosmic soil",
     },
     {
-      type: "cactus" as PlantType,
-      name: "Teary Cactus",
+      type: "mushroom" as PlantType,
+      name: "Mushu",
       description: "A sensitive soul with surprising resilience",
       stats: { speed: 1, power: 5, magic: 2 },
       special: "Immune to space radiation",
     },
     {
       type: "tulip" as PlantType,
-      name: "Ruby Tulip",
+      name: "Ruby",
       description: "Quick and agile, with a fiery personality",
       stats: { speed: 5, power: 3, magic: 2 },
       special: "Can bloom in any environment",
@@ -40,7 +40,7 @@ export default function CharacterGallery() {
     },
     {
       type: "crystal" as PlantType,
-      name: "Crystal Mint",
+      name: "Glacia",
       description: "Rare cosmic variant with crystalline growth",
       stats: { speed: 3, power: 3, magic: 5 },
       special: "Can freeze time briefly",

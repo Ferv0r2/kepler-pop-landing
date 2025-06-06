@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 
-export type PlantType = "sprout" | "cactus" | "tulip" | "sunflower" | "crystal"
+export type PlantType = "sprout" | "mushroom" | "tulip" | "sunflower" | "crystal"
 
 interface PlantCharacterProps {
   type: PlantType
@@ -31,7 +31,7 @@ export default function PlantCharacter({
 
   const getCharacterImage = () => {
     switch (type) {
-      case "cactus":
+      case "mushroom":
         return "/images/plants/cactus.png"
       case "sunflower":
         return "/images/plants/sunflower.png"
@@ -47,7 +47,7 @@ export default function PlantCharacter({
 
   const getGlowColor = () => {
     switch (type) {
-      case "cactus":
+      case "mushroom":
         return "from-cyan-500/30 to-transparent"
       case "sunflower":
         return "from-yellow-500/30 to-transparent"
