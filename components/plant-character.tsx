@@ -32,7 +32,7 @@ export default function PlantCharacter({
   const getCharacterImage = () => {
     switch (type) {
       case "mushroom":
-        return "/images/plants/cactus.png"
+        return "/images/plants/mushroom.png"
       case "sunflower":
         return "/images/plants/sunflower.png"
       case "tulip":
